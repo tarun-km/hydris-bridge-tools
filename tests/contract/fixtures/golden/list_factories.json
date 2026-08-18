@@ -1,0 +1,15 @@
+{
+  "request": {
+    "user_id": "u-ops-alpha",
+    "arguments": {}
+  },
+  "response": {
+    "factories": [
+      {
+        "factory_id": "fx-mbr-01",
+        "name": "Alpha MBR Plant 01",
+        "industry": "food_and_beverage"
+      }
+    ]
+  }
+}

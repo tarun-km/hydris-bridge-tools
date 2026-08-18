@@ -1,0 +1,42 @@
+{
+  "request": {
+    "user_id": "u-ops-alpha",
+    "arguments": {
+      "factory_id": "fx-mbr-01"
+    }
+  },
+  "response": {
+    "factory_id": "fx-mbr-01",
+    "as_of": "2026-08-17",
+    "alerts": [
+      {
+        "alert_id": "al-mbr-tmp-01",
+        "unit_id": "u-mbr-01",
+        "parameter_code": "tmp",
+        "rule_name": "TMP_RISING_RULE",
+        "severity": "warning",
+        "fired_at": "2026-08-09T06:00:00Z",
+        "status": "active",
+        "root_cause_hint": "Progressive TMP rise alongside declining flux over the last two weeks is consistent with membrane fouling; check CIP/backwash schedule adherence before assuming an instrument fault.",
+        "trigger_value": {
+          "value": 31.4,
+          "unit": "kPa"
+        }
+      },
+      {
+        "alert_id": "al-mbr-cod-01",
+        "unit_id": null,
+        "parameter_code": "cod",
+        "rule_name": "COD_LIMIT_EXCEEDANCE_RULE",
+        "severity": "critical",
+        "fired_at": "2026-08-17T06:00:00Z",
+        "status": "active",
+        "root_cause_hint": "Effluent COD exceeded the permit limit on the same day flux reached its lowest point in the window; treat membrane performance loss as the primary hypothesis before considering dilution or bypass changes.",
+        "trigger_value": {
+          "value": 265.0,
+          "unit": "mg/L"
+        }
+      }
+    ]
+  }
+}

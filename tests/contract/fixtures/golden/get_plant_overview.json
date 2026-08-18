@@ -1,0 +1,34 @@
+{
+  "request": {
+    "user_id": "u-ops-alpha",
+    "arguments": {
+      "factory_id": "fx-mbr-01"
+    }
+  },
+  "response": {
+    "factory_id": "fx-mbr-01",
+    "name": "Alpha MBR Plant 01",
+    "industry": "food_and_beverage",
+    "units": [
+      {
+        "unit_id": "u-eq-01",
+        "unit_type": "equalization_tank",
+        "process_qualifiers": []
+      },
+      {
+        "unit_id": "u-mbr-01",
+        "unit_type": "membrane_bioreactor",
+        "process_qualifiers": [
+          "aerobic"
+        ]
+      }
+    ],
+    "flow": [
+      {
+        "from_unit_id": "u-eq-01",
+        "to_unit_id": "u-mbr-01"
+      }
+    ],
+    "snapshot_version": "2026-08-17T00:00:00Z"
+  }
+}

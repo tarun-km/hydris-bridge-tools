@@ -1,0 +1,91 @@
+{
+  "request": {
+    "user_id": "u-ops-alpha",
+    "arguments": {
+      "factory_id": "fx-mbr-01",
+      "unit_id": "u-mbr-01"
+    }
+  },
+  "response": {
+    "factory_id": "fx-mbr-01",
+    "unit_id": "u-mbr-01",
+    "unit_type": "membrane_bioreactor",
+    "process_qualifiers": [
+      "aerobic"
+    ],
+    "geometry": {
+      "volume": {
+        "value": 140.0,
+        "unit": "m3"
+      },
+      "membrane_area": {
+        "value": 1200.0,
+        "unit": "m2"
+      }
+    },
+    "instruments": [
+      {
+        "instrument_id": "pressure-transducer-01",
+        "parameter_code": "tmp",
+        "measurement_type": "online_sensor"
+      },
+      {
+        "instrument_id": "flux-calc-01",
+        "parameter_code": "flux",
+        "measurement_type": "derived"
+      },
+      {
+        "instrument_id": "do-probe-01",
+        "parameter_code": "do",
+        "measurement_type": "online_sensor"
+      },
+      {
+        "instrument_id": "mlss-analyzer-01",
+        "parameter_code": "mlss",
+        "measurement_type": "lab_analysis"
+      }
+    ],
+    "parameter_bands": [
+      {
+        "parameter_code": "tmp",
+        "unit": "kPa",
+        "normal_min": null,
+        "normal_max": 30.0,
+        "watch_min": null,
+        "watch_max": 30.0,
+        "alarm_min": null,
+        "alarm_max": 45.0
+      },
+      {
+        "parameter_code": "flux",
+        "unit": "LMH",
+        "normal_min": 15.0,
+        "normal_max": null,
+        "watch_min": 15.0,
+        "watch_max": null,
+        "alarm_min": 10.0,
+        "alarm_max": null
+      },
+      {
+        "parameter_code": "do",
+        "unit": "mg/L",
+        "normal_min": 2.0,
+        "normal_max": 6.0,
+        "watch_min": 2.0,
+        "watch_max": 6.0,
+        "alarm_min": 1.0,
+        "alarm_max": 8.0
+      },
+      {
+        "parameter_code": "mlss",
+        "unit": "mg/L",
+        "normal_min": 3000.0,
+        "normal_max": 6000.0,
+        "watch_min": 3000.0,
+        "watch_max": 6000.0,
+        "alarm_min": 2000.0,
+        "alarm_max": 8000.0
+      }
+    ]
+  }
+}

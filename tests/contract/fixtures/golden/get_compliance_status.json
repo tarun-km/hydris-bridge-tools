@@ -1,0 +1,52 @@
+{
+  "request": {
+    "user_id": "u-ops-alpha",
+    "arguments": {
+      "factory_id": "fx-mbr-01"
+    }
+  },
+  "response": {
+    "factory_id": "fx-mbr-01",
+    "window": {
+      "start": "2026-08-11",
+      "end": "2026-08-17"
+    },
+    "limits": [
+      {
+        "parameter_code": "cod",
+        "limit": {
+          "value": 250.0,
+          "unit": "mg/L"
+        },
+        "recent_value": {
+          "value": 265.0,
+          "unit": "mg/L"
+        },
+        "margin": {
+          "value": -15.0,
+          "unit": "mg/L",
+          "reference": "permit_limit"
+        },
+        "tier": "exceedance"
+      },
+      {
+        "parameter_code": "bod",
+        "limit": {
+          "value": 30.0,
+          "unit": "mg/L"
+        },
+        "recent_value": {
+          "value": 22.0,
+          "unit": "mg/L"
+        },
+        "margin": {
+          "value": 8.0,
+          "unit": "mg/L",
+          "reference": "permit_limit"
+        },
+        "tier": "compliant"
+      }
+    ],
+    "overall_tier": "exceedance"
+  }
+}

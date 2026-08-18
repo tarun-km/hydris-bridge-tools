@@ -1,0 +1,162 @@
+{
+  "request": {
+    "user_id": "u-ops-alpha",
+    "arguments": {
+      "factory_id": "fx-mbr-01",
+      "unit_id": "u-mbr-01",
+      "parameter_codes": [
+        "tmp",
+        "flux"
+      ],
+      "start_date": "2026-08-10",
+      "end_date": "2026-08-17"
+    }
+  },
+  "response": {
+    "factory_id": "fx-mbr-01",
+    "unit_id": "u-mbr-01",
+    "series": [
+      {
+        "parameter_code": "tmp",
+        "parameter_type": "measured",
+        "points": [
+          {
+            "timestamp": "2026-08-10",
+            "value": 33.1,
+            "unit": "kPa",
+            "zone": "watch"
+          },
+          {
+            "timestamp": "2026-08-11",
+            "value": 34.8,
+            "unit": "kPa",
+            "zone": "watch"
+          },
+          {
+            "timestamp": "2026-08-12",
+            "value": 36.1,
+            "unit": "kPa",
+            "zone": "watch"
+          },
+          {
+            "timestamp": "2026-08-13",
+            "value": 37.2,
+            "unit": "kPa",
+            "zone": "watch"
+          },
+          {
+            "timestamp": "2026-08-14",
+            "value": 38.1,
+            "unit": "kPa",
+            "zone": "watch"
+          },
+          {
+            "timestamp": "2026-08-15",
+            "value": 39.0,
+            "unit": "kPa",
+            "zone": "watch"
+          },
+          {
+            "timestamp": "2026-08-16",
+            "value": 40.0,
+            "unit": "kPa",
+            "zone": "watch"
+          },
+          {
+            "timestamp": "2026-08-17",
+            "value": 41.2,
+            "unit": "kPa",
+            "zone": "watch"
+          }
+        ],
+        "record_status": {
+          "category": "tmp",
+          "populated": true,
+          "records_in_window": 8,
+          "window": {
+            "start": "2026-08-10",
+            "end": "2026-08-17"
+          }
+        }
+      },
+      {
+        "parameter_code": "flux",
+        "parameter_type": "derived",
+        "points": [
+          {
+            "timestamp": "2026-08-10",
+            "value": 18.2,
+            "unit": "LMH",
+            "zone": "normal"
+          },
+          {
+            "timestamp": "2026-08-11",
+            "value": 17.6,
+            "unit": "LMH",
+            "zone": "normal"
+          },
+          {
+            "timestamp": "2026-08-12",
+            "value": 17.1,
+            "unit": "LMH",
+            "zone": "normal"
+          },
+          {
+            "timestamp": "2026-08-13",
+            "value": 16.6,
+            "unit": "LMH",
+            "zone": "normal"
+          },
+          {
+            "timestamp": "2026-08-14",
+            "value": 16.2,
+            "unit": "LMH",
+            "zone": "normal"
+          },
+          {
+            "timestamp": "2026-08-15",
+            "value": 15.7,
+            "unit": "LMH",
+            "zone": "normal"
+          },
+          {
+            "timestamp": "2026-08-16",
+            "value": 15.2,
+            "unit": "LMH",
+            "zone": "normal"
+          },
+          {
+            "timestamp": "2026-08-17",
+            "value": 14.5,
+            "unit": "LMH",
+            "zone": "watch"
+          }
+        ],
+        "record_status": {
+          "category": "flux",
+          "populated": true,
+          "records_in_window": 8,
+          "window": {
+            "start": "2026-08-10",
+            "end": "2026-08-17"
+          }
+        }
+      }
+    ],
+    "bounding": {
+      "applied": false,
+      "resolution": "raw",
+      "requested_window": {
+        "start": "2026-08-10",
+        "end": "2026-08-17"
+      },
+      "returned_window": {
+        "start": "2026-08-10",
+        "end": "2026-08-17"
+      },
+      "returned_points": 16,
+      "max_points_per_series": 21,
+      "reason": null
+    }
+  }
+}

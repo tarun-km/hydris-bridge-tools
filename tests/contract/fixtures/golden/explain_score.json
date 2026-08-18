@@ -1,0 +1,118 @@
+{
+  "request": {
+    "user_id": "u-ops-alpha",
+    "arguments": {
+      "factory_id": "fx-mbr-01",
+      "unit_id": "u-mbr-01"
+    }
+  },
+  "response": {
+    "factory_id": "fx-mbr-01",
+    "unit_id": "u-mbr-01",
+    "as_of": "2026-08-17",
+    "engine": "membrane_performance_engine",
+    "baseline_score": {
+      "value": 100.0,
+      "unit": "index_0_100"
+    },
+    "health_score": {
+      "value": 70.0,
+      "unit": "index_0_100"
+    },
+    "worst_parameter": "tmp",
+    "steps": [
+      {
+        "parameter_code": "tmp",
+        "latest_value": {
+          "value": 41.2,
+          "unit": "kPa"
+        },
+        "zone": "watch",
+        "band": {
+          "parameter_code": "tmp",
+          "unit": "kPa",
+          "normal_min": null,
+          "normal_max": 30.0,
+          "watch_min": null,
+          "watch_max": 30.0,
+          "alarm_min": null,
+          "alarm_max": 45.0
+        },
+        "penalty": {
+          "value": 15.0,
+          "unit": "index_0_100"
+        },
+        "rationale": "tmp is 41.2 kPa, outside its normal band and inside its watch band; a watch-tier penalty was applied."
+      },
+      {
+        "parameter_code": "flux",
+        "latest_value": {
+          "value": 14.5,
+          "unit": "LMH"
+        },
+        "zone": "watch",
+        "band": {
+          "parameter_code": "flux",
+          "unit": "LMH",
+          "normal_min": 15.0,
+          "normal_max": null,
+          "watch_min": 15.0,
+          "watch_max": null,
+          "alarm_min": 10.0,
+          "alarm_max": null
+        },
+        "penalty": {
+          "value": 15.0,
+          "unit": "index_0_100"
+        },
+        "rationale": "flux is 14.5 LMH, outside its normal band and inside its watch band; a watch-tier penalty was applied."
+      },
+      {
+        "parameter_code": "do",
+        "latest_value": {
+          "value": 3.59,
+          "unit": "mg/L"
+        },
+        "zone": "normal",
+        "band": {
+          "parameter_code": "do",
+          "unit": "mg/L",
+          "normal_min": 2.0,
+          "normal_max": 6.0,
+          "watch_min": 2.0,
+          "watch_max": 6.0,
+          "alarm_min": 1.0,
+          "alarm_max": 8.0
+        },
+        "penalty": {
+          "value": 0.0,
+          "unit": "index_0_100"
+        },
+        "rationale": "do is 3.59 mg/L, within its normal band; no penalty."
+      },
+      {
+        "parameter_code": "mlss",
+        "latest_value": {
+          "value": 4966.0,
+          "unit": "mg/L"
+        },
+        "zone": "normal",
+        "band": {
+          "parameter_code": "mlss",
+          "unit": "mg/L",
+          "normal_min": 3000.0,
+          "normal_max": 6000.0,
+          "watch_min": 3000.0,
+          "watch_max": 6000.0,
+          "alarm_min": 2000.0,
+          "alarm_max": 8000.0
+        },
+        "penalty": {
+          "value": 0.0,
+          "unit": "index_0_100"
+        },
+        "rationale": "mlss is 4966.0 mg/L, within its normal band; no penalty."
+      }
+    ]
+  }
+}

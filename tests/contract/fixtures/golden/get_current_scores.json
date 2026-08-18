@@ -1,0 +1,122 @@
+{
+  "request": {
+    "user_id": "u-ops-alpha",
+    "arguments": {
+      "factory_id": "fx-mbr-01"
+    }
+  },
+  "response": {
+    "factory_id": "fx-mbr-01",
+    "as_of": "2026-08-17",
+    "units": [
+      {
+        "unit_id": "u-eq-01",
+        "unit_type": "equalization_tank",
+        "engine": "hydraulic_buffer_engine",
+        "health_score": {
+          "value": 100.0,
+          "unit": "index_0_100"
+        },
+        "health_score_delta": {
+          "value": 0.0,
+          "unit": "index_0_100",
+          "reference": "previous_day"
+        },
+        "worst_parameter": null,
+        "contributions": [
+          {
+            "parameter_code": "ph",
+            "latest_value": {
+              "value": 7.08,
+              "unit": "pH"
+            },
+            "zone": "normal",
+            "penalty": {
+              "value": 0.0,
+              "unit": "index_0_100"
+            }
+          },
+          {
+            "parameter_code": "flow_in",
+            "latest_value": {
+              "value": 42.3,
+              "unit": "m3/h"
+            },
+            "zone": "normal",
+            "penalty": {
+              "value": 0.0,
+              "unit": "index_0_100"
+            }
+          }
+        ]
+      },
+      {
+        "unit_id": "u-mbr-01",
+        "unit_type": "membrane_bioreactor",
+        "engine": "membrane_performance_engine",
+        "health_score": {
+          "value": 70.0,
+          "unit": "index_0_100"
+        },
+        "health_score_delta": {
+          "value": -15.0,
+          "unit": "index_0_100",
+          "reference": "previous_day"
+        },
+        "worst_parameter": "tmp",
+        "contributions": [
+          {
+            "parameter_code": "tmp",
+            "latest_value": {
+              "value": 41.2,
+              "unit": "kPa"
+            },
+            "zone": "watch",
+            "penalty": {
+              "value": 15.0,
+              "unit": "index_0_100"
+            }
+          },
+          {
+            "parameter_code": "flux",
+            "latest_value": {
+              "value": 14.5,
+              "unit": "LMH"
+            },
+            "zone": "watch",
+            "penalty": {
+              "value": 15.0,
+              "unit": "index_0_100"
+            }
+          },
+          {
+            "parameter_code": "do",
+            "latest_value": {
+              "value": 3.59,
+              "unit": "mg/L"
+            },
+            "zone": "normal",
+            "penalty": {
+              "value": 0.0,
+              "unit": "index_0_100"
+            }
+          },
+          {
+            "parameter_code": "mlss",
+            "latest_value": {
+              "value": 4966.0,
+              "unit": "mg/L"
+            },
+            "zone": "normal",
+            "penalty": {
+              "value": 0.0,
+              "unit": "index_0_100"
+            }
+          }
+        ]
+      }
+    ],
+    "worst_unit_id": "u-mbr-01",
+    "worst_engine": "membrane_performance_engine"
+  }
+}

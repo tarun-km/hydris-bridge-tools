@@ -1,0 +1,50 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "diagnostic-mcp"
+version = "0.2.0"
+description = "Hydris Pulse Diagnostic MCP server (Bridge track Work Item 2: tools 1-8) - destined for lite/diagnostic_mcp/ in the Lite monorepo"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.29,<2",
+    "pydantic>=2.7",
+    "pyjwt>=2.8",
+    "uvicorn>=0.30",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "httpx>=0.27",
+    "ruff>=0.6",
+    "mypy>=1.11",
+    "detect-secrets>=1.5",
+]
+# Only needed for examples/run_diagnostic_session.py, the generic-MCP-
+# client demo agent - the server itself has no model-provider dependency
+# (EXT-4/PD-13). See diagnostic_mcp/providers/.
+llm-demo = [
+    "anthropic>=0.40",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["diagnostic_mcp"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.11"
+ignore_missing_imports = true
+disallow_untyped_defs = false

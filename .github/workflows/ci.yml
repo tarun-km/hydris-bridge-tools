@@ -1,0 +1,63 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12"]
+    env:
+      # CI-only, never real secrets - see docs/decisions.md / NFR-4 AC-3.
+      LITE_MCP_SERVICE_TOKEN_SECRET: ci-only-service-secret-0123456789ab
+      LITE_MCP_USER_CONTEXT_SECRET: ci-only-user-context-secret-0123456789
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: pip install -e ".[dev,llm-demo]"
+
+      - name: Lint (ruff)
+        run: ruff check .
+
+      - name: Type check (mypy)
+        run: mypy diagnostic_mcp tests examples
+
+      # BRIDGE-1: stands in for the real "Lite build fails if a handler
+      # imports a write service" gate until this merges into the Lite
+      # monorepo and can target its actual service-layer module names.
+      - name: BRIDGE-1 no-write-import gate
+        run: python scripts/check_no_write_imports.py
+
+      # EXT-4/PD-13: the reasoning model stays confined to providers/.
+      - name: Provider-confinement gate
+        run: python scripts/check_provider_confinement.py
+
+      # NFR-4 AC-3: secret scanning of code and configuration finds no
+      # embedded secrets.
+      - name: Secret scan
+        run: |
+          detect-secrets scan --all-files > secrets-scan.json
+          python -c "
+          import json, sys
+          data = json.load(open('secrets-scan.json'))
+          results = data.get('results', {})
+          if results:
+              print('Potential secret(s) detected:', results)
+              sys.exit(1)
+          print('OK: no secrets detected')
+          "
+
+      # BRIDGE-3/BRIDGE-4/BRIDGE-9 contract suite: golden fixtures,
+      # description snapshot, response-shape checks - see tests/contract/.
+      - name: Contract suite + full test suite (pytest)
+        run: pytest -v
